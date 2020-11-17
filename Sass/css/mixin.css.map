@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAUA;;;;;;;;;;;;;;;;;;;;;;;;;EAyBE;AAEF,WAAW;EApCP,gBAAgB,EAqCE,IAAI;EApCtB,KAAK,EAoCmB,KAAK;EAnC7B,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,GAAG;EACf,OAAO,EAAE,IAAI;;AAoCjB,WAAW;EAxCP,gBAAgB,EAyCE,IAAI;EAxCtB,KAAK,EAFuB,KAAK;EAGjC,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,GAAG;EACf,OAAO,EAAE,IAAI;;AAwCjB,WAAW;EA5CP,gBAAgB,EA6CE,IAAI;EA5CtB,KAAK,EAFuB,KAAK;EAGjC,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,GAAG;EACf,OAAO,EAAE,IAAI;;AA4CjB;;;oCAGoC;AAGpC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAoDE",
+"sources": ["../sass/mixin.scss"],
+"names": [],
+"file": "mixin.css"
+}

@@ -1,0 +1,108 @@
+@mixin cuadrado ($fondo, $ancho:200px) {
+    background-color:$fondo;
+    width:$ancho;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+
+
+/* 
+.cuadrado-1{
+    background-color:#4444;
+    width:200px;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.cuadrado-2{
+    background-color:#4444;
+    width:200px;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.cuadrado-3{
+    background-color:#4444;
+    width:200px;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+*/ 
+
+.cuadrado-1{
+    @include cuadrado(#111, 600px);
+}
+
+.cuadrado-2{
+    @include cuadrado(#222);
+}
+
+.cuadrado-3{
+    @include cuadrado(#444);
+}
+
+/* Podemos darnos cuenta de que los estilos
+se repiten para los mismos bloques. Entonces
+el mixin sirve para optimizar, osea para poner las mismas
+propiedades a diferentes elementos*/
+
+
+/* 
+Hasta ahí le dimos las mismas propiedades a los 3 bloques, pero que pasa si
+queremos que los otros sean diferentes?
+Para eso están los parametros que van dentro del parentesis.
+Definimos los parametros y lo almacenados, ds en los bloques le damos el valor 
+
+que queremos.
+
+Importante: Cuando agregas un parametro, tienes que si o si tienes que 
+
+especificar el valor de todos o te dará un error.
+
+@mixin cuadrado ($fondo) {
+    background-color:$fondo;
+    width:200px;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.cuadrado-1{
+    @include cuadrado(#111);
+}
+
+.cuadrado-2{
+    @include cuadrado(#222);
+}
+
+Pero podemos establecer un valor para el parametro por defecto, asi
+evitamos este error.
+
+@mixin cuadrado ($fondo, $ancho:200px) {
+    background-color:$fondo;
+    width:$ancho;
+    height: 200px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+
+.cuadrado-1{
+    @include cuadrado(#111, 600px);
+}
+
+.cuadrado-2{
+    @include cuadrado(#222);
+}
+
+
+Si apredemso esto ya podremos modificar los estilos de bootstrap
+Revisar la documentación 
+
+*/
