@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title> Introducción al DOM </title>
+</head>
+<body>
+
+    <h1 id="titulo"> TItulo de nuestro sitio web</h1>
+    <p>1.- Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ipsam non exercitationem tenetur labore officiis, eos perferendis officia consectetur earum? </p>
+               
+    <p id="segundo"> 2.- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur velit similique recusandae sequi iusto maxime quasi, sint ipsa quaerat aliquid? </p>
+
+    <p> 3.- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt omnis culpa maxime sed odit tempora fugiat natus totam sapiente placeat! </p>   
+ 
+    
+    <script>
+
+        var elementosP = document.getElementsByTagName("p");
+
+        //Trayendo los elementos, más utilizado trayendo desde el id.
+
+        var segundoParrafo = document.getElementById("segundo");
+        // y escribimos en la consola del browser: segundoParrafo
+        // segundoParrafo.innerHTML
+
+
+    /*
+       El DOM nos permite acceder y manipular los elementos de nuestro sitio web muy facil
+       . DOM es la estructura de nuestor sitio web que esta conformado por elementos llamados nodos
+       Dom aqui cuenta con dos elementos primarios que son el head y el body
+       dentro de cada uno se tiene mas elementos:
+       ejem: dentro de body tenemos h1 y p
+       El objetivo del dom es acceder a los elementos con JS, es asi como accedemos para obtener un valor y trabajar con el
+
+    */     
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

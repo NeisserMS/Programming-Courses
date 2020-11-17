@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title> Funciones </title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="numero1">
+        <input type="text" id="numero2">
+        <input type="button" value="Sumar" onclick="alert ( suma(10,50)); ">
+    </form>
+
+    <script>
+       
+        var suma =function(numero1, numero2){
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+
+            var resultado = numero1 + numero2;
+            return resultado;
+
+        }
+
+       /*
+    Es una buena practica usar los id para aplicaciones en JS en lugar de usarlo
+    para diseño en CSS.
+    Para encontrar elementos en el down, getElementById
+    Es como decirlo queremos que del documento  extraigas al elemento 1 y dps su valor
+    Ahora para hacer que el boton funcione hay que agregarle un evento ONLICK
+    No es recomendable hacer eventos en el archivo html, es mejor en archivo separado
+    Con eso le decimos que cuando demos un click este va a ejecutar un alert q tenag el resultado de la función
+    Saldra que 1 + 2 es = 12 porque ambos son cadena de texto.
+    Tenemos una función de JS que nos permite solucionar esto ,nos permite
+    agregar tod oe lcontenido como un parametro y ese valor tipo cadena de texto lo 
+    va a transformar como un entero.
+    Agregamos el parseInt() dentro   
+
+
+
+       */     
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

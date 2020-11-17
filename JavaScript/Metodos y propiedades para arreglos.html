@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Metodos y arreglos </title>
+</head>
+<body>
+    <script>
+        var amigos = ["Neisser", "Fernando", "Eduardo", "Gonzalo", "Jonathan"];
+        //document.write(amigos.length);
+        //document.write("Tienes " + amigos.length + " amigos.");
+        //amigos[amigos.length] = "Jair";
+        //amigos.push("Mariano", "Jordi");
+        //document.write(amigos);
+        //amigos.pop();
+
+        //var amigos2 = ["Karen", "Junior","Gerson"];
+        //var amigos3 = amigos.concat(amigos2);
+        //document.write(amigos3);
+
+        //document.write(amigos.join(" : "));
+
+        var ordenados = amigos.sort();
+        document.write(ordenados);
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    Utilizaremos la propiedad length para ver cuantos elementos tenemos en el arreglo.
+    El siguente ejemplo es para concatenar solo texto en la salida
+    Ahora agregaremos un elemento de forma dinamica en el arreglo.
+    Otra manera es agregar elementos al final de un arreglo es con push();
+    Para eliminar el ultimo elemento del arreglo se usa pop();
+    El siguiente ejemplo es para juntar (concatenar dos arreglos). Para ello creamos otro arreglo para que ambos se unan en él.
+    Otro metodo es el join, lo que recibe dentro es un parametro, puede ser lo que queramos. En este ejemplo la salida son los nombres
+    pero con : en medio de ellos. Sirve para agregar espaciado al arreglo.
+    Usaremos sort () para ordenar alfabeticamente.
+    ->

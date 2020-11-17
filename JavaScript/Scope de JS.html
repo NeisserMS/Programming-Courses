@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title> Funciones </title>
+</head>
+<body>
+    <script>
+       
+       var variableGlobal = "Esta es global";
+
+       var miFuncion = function(){
+           alert(variableGlobal);
+
+           var FuncionLocal = function(){
+           
+           var variableGlobal = "Esta es la variable local, dentro de una funciónLocal";
+           
+       }
+
+       FuncionLocal();
+
+     }
+
+       miFuncion();
+       //alert(variableGlobal);
+
+       /*
+        Scope es lo que determina la accesibilidad de nuestro codigo, es decir desde 
+        donde podemos acceder a neustra variables
+        hay dos tipos:
+        -gobal: son las variables desde donde podemos acceder a ellas desde cualquier parte del código
+        -Locales: son las var creadas dentro de uan función y q solo pueden ser accecidades desde su propia funcion o otra función que esté anidada.
+        A las globale se le puede modificar el valor
+        podemos acceder a las variables desde dentro hacia afuer,a pero desde hacia afuera no 
+        podemos acceder a lso elementos que están dentro.
+
+        Para proteger el codigo debes crear una funcion autoinvocada para que el codigo que este afuera no pueda acceder a lo que está adentro
+        , pero todo lo que está adentro si puede acceder a loque está afuera
+
+        Sintaxis de función autoinvocada:
+
+        1.-(function(){}())
+        2.-function(){
+            //Nuestro código
+        }())
+        3.-function(){
+             var variableGlobal = "Esta es global";
+
+       var miFuncion = function(){
+           alert(variableGlobal);
+
+           var FuncionLocal = function(){
+           
+           var variableGlobal = "Esta es la variable local, dentro de una funciónLocal";
+           
+       }
+
+       FuncionLocal();
+
+     }
+       miFuncion();    
+        }())
+        
+        Todo lo que esté dentro del código estará protegido, es decir los programas de terceros no podrán
+        acceder a tu codigo a las variables y modificarlas.
+        
+       */     
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

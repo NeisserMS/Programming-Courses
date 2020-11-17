@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos del DOM</title>
+</head>
+<body>
+    <button id="boton">Boton</button>
+    <input type="text" id="input">
+
+    <script>
+        (function(){
+
+            var saludo = function(){
+                alert('Saludo');
+            }
+
+            var boton = document.getElementById('boton');
+            boton.addEventListener("click", saludo );
+
+
+        }())
+
+
+        /* 
+        Eventos: queremos ejecutar codigo cuando el usuario realiza alguna acción
+        Utilizamos la funcion autoinvocada para proteger las variables.
+        veremos el modelo de eventos standar: standar, basica y de Intener Explore
+
+        */
+    </script>
+</body>
+</html>

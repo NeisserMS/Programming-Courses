@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Asperiores ad,  dolor sit amet.</li>
+    </ol>
+
+    <script>
+
+        var elemento = document.createElement("li"),
+            contenido = document.createTextNode("Nuevo Texto");
+
+        elemento.appendChild(contenido);
+
+        //Agregarlo donde lo necesitamos:
+        var padre = document.getElementsByTagName("li")[0].parentNode;
+        // padre.appendChild(elemento);
+
+        //Otra forma de obtener el elemento padre del elemento hijo: 
+        var padre = document.getElementById("lista");
+
+        
+
+        /*
+        Aquí veremos como posicionar los elementos en donde lo 
+        necesitemos, como por ejemplo: agregar el nodo antes del
+        elemento li.
+        Además como modificar el contenido del nodo, reemplazarlo y eliminarlo.
+        */
+    </script>
+</body>
+</html>
