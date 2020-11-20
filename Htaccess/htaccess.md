@@ -58,8 +58,11 @@ Tienes que crear tu archivo de 404.html aparte, o de cual quieres.
 
 Ya hemos configurado para que no vean nuestras carpetas, pero cuando escribimos en otra vemos que si se puede visualizar, entonces debemos de restringirlo. El servidor no tiene la configuración global, debemos de proteger todo el servidor.
 
-Entonces creamos un archivo htaccess en la carpeta raiz, es decir en htdocs
+Entonces creamos un archivo htaccess en la carpeta raiz, es decir en htdocs.
 
 ##### PROTEGIENDO PROYECTOS CON USUARIO Y CLAVE EN SERVIDOR LOCAL
 
+
 ##### URL AMIGABLES
+
+Ver el curso aquí: https://www.youtube.com/watch?v=y9KEgh6yXME
