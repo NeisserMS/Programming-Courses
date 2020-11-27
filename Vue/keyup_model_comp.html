@@ -11,6 +11,9 @@
 
         <h1> {{titulo}} </h1>
 
+        <input type="text" v-model="nuevaFruta">
+        <button @click="agregarFruta">Agregar</button>
+
       <ul>
           <li v-for="fruta of frutas"> <!-- fruta va a ser interativo demtro de frutas-->
 
@@ -23,8 +26,12 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="code.js"></script>
+    <script src="keyup_model_comp.js"> </script>
    
 </body>
 </html>
 
+<!-- 
+
+
+-->

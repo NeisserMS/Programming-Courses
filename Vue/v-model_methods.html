@@ -11,6 +11,9 @@
 
         <h1> {{titulo}} </h1>
 
+        <input type="text" v-model="nuevaFruta">
+        <button v-on:click="agregarFruta">Agregar</button>
+
       <ul>
           <li v-for="fruta of frutas"> <!-- fruta va a ser interativo demtro de frutas-->
 
@@ -23,8 +26,21 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="code.js"></script>
+    <script src="model_methods.js"> </script>
    
 </body>
 </html>
 
+<!-- 
+
+Vamos a generar uan conexión desde el HTML hasta JS, para eso
+vamos a usar los inputs.
+
+tenemos que procesar lo que se ingrese en el input, para que sea detectado por 
+nuestro Vue.
+v-model nos permite hacer una conexion directa del input con el JS.
+
+Tanto v-on:click o @onclick genera el mismo efecto.
+
+
+-->
