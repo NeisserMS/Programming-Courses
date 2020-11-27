@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="le-edge"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Practicando con Vue</title>
+</head>
+<body>
+
+        <section class="hero">
+            <div class="hero-body">
+              <div id="app" class="section">
+                <h1 class="title"> Vue </h1>
+                <h2 class="subtitle"> Instancia </h2>
+
+                {{message}}
+
+              </div>
+            </div>
+
+          </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: 'Comenzando con Vue'
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
