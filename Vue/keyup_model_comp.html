@@ -11,17 +11,24 @@
 
         <h1> {{titulo}} </h1>
 
-        <input type="text" v-model="nuevaFruta">
+        <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">  <!-- Agregamos el @keyup.enter-->
         <button @click="agregarFruta">Agregar</button>
+
+
+
 
       <ul>
           <li v-for="fruta of frutas"> <!-- fruta va a ser interativo demtro de frutas-->
+            <input type="number" v-model.number="fruta.cantidad">
 
-              {{fruta.cantidad}} - {{fruta.nombre}}
-              
+             {{fruta.nombre}}
+
+             <button @click="fruta.cantidad++">+</button> 
               <span v-if="fruta.cantidad === 0"> - Sin Stock </span>
           </li> 
       </ul>
+
+      <h4> TOTAL : {{sumarFrutas}}</h4>
 
     </div>
 
