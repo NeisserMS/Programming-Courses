@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--  shrink-to-fit-no -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Bootstrap Local</title>
+</head>
+<body>
+
+    <h1>Unidad REM y REM</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur voluptate eaque rerum, cumque sequi eius architecto tempore ea ipsum et?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit eos ipsa est cupiditate reprehenderit recusandae quibusdam neque explicabo dicta in.</p>
+
+    <!-- 
+        La unidad REM es relativa
+        por defecto el texto viene en 16 pixeles, pero ya no se trabaja con eso, porque
+        cuando cambiamos por ejem en configuración el tamaño de la fuente en el navegador, el texto nunca cambiará
+        porque son pixeles.
+    
+        1 rem = 16px
+        
+        Mientras que un EM siempre es relativo al elemento padre, es decir si en tu contenedor llamado caja, dentro de el hay un parrafo y 
+        pones que le texto será de 10px
+        y en el texto de la etiqueta p pones un 1em, ese em vendría a ser 10px.
+
+        Y si no tiene un elemento padre, este tomaría la del HTML que es de
+        16 px.
+
+        .caja{
+            font-size:10px;
+        }
+
+        p{
+            font-size: 1em;
+            border: 0.1em black solid;
+            padding: 1em;
+        }
+    -->
+
+ <!-- Los archivos deben de ir en este orden-->
+ <script src="js/jquery-3.3.1.slim.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>   
+</body>   
+</html>

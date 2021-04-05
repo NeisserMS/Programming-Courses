@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--  shrink-to-fit-no -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Flexbox</title>
+
+    <style>
+
+        @media (min-width: 768px){ /* utilizaremos MQ para ver otras propiedades */
+
+            .contenedor{
+            display: flex;  /* vemos que con esto se alinea de manera horizontal */
+            /* align-items: flex-start;  Para que se alinean pero con el texto de arriba */
+            /* align-items: flex-end; Para que se alinie con la parte de abajo */
+            /* align-items: center; todo se alinea con respecto al eje central */
+            /* align-items: stretch; es la que viene por defecto, todos se alinean */
+            /* flex-direction: column; para que ya no sean en columnas, ahora en filas */
+            }
+
+        .contenedor-2{
+            display: flex;
+            /* justify-content: flex-start; para que se alinie a la izquierda */
+            /* justify-content: flex-end; para que se alinie a la derecha */
+            /* justify-content: center; se centra */
+            /* justify-content: space-between; añade un espacio entre las cajas */
+            /* justify-content: space-around; añade un espacio y tambien en los lados esquierdo y derecho*/
+            }
+ 
+        .content-caja{
+             flex-basis: 25%;  /* es igual a  width: 25%; */
+             }
+
+        }
+
+        .contenedor div, .contenedor-2 div, .contenedor-3 div{
+            border: 1px #ccc solid;
+            padding: 12px;
+            background: #FAFAFA;
+        }
+
+        .caja-1{
+            flex: 2; /* abacar dos columnas */
+            order: 2; /*Esto es para odenar, es decir la caja 1 ahora estará en la posición 2 */
+
+        }
+
+        .caja-2{
+            flex: 4;
+            order: 3;
+        }
+
+        .caja-3{
+            flex: 2;
+            order: 1;
+        }
+
+        .contenedor-3{
+            display: flex;
+            
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <div class="caja-1">
+            <h3>Caja Uno</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque delectus ex doloremque, eligendi accusantium minima.</p>
+        </div>
+        <div class="caja-2">
+            <h3>Caja Dos</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="caja-3">
+            <h3>Caja Tres</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa eligendi, officiis sapiente at temporibus impedit.</p>
+        </div>
+    </div>
+
+    <div class="contenedor-2">
+        <div class="content-caja">
+            <h3>Caja Cuatro</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque delectus ex doloremque, eligendi accusantium minima.</p>
+        </div>
+        <div class="content-caja">
+            <h3>Caja Cinco</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="content-caja">
+            <h3>Caja Seis</h3>
+            <p></p>
+        </div>
+    </div>
+   
+    <div class="contenedor-3">
+        <div class="content-caja-3">
+            <h3>Caja Siete</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo rerum aspernatur modi qui voluptatibus.</p>
+        </div>
+
+        <div class="content-caja-3">
+            <h3>Caja Ocho</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo rerum aspernatur modi qui voluptatibus.</p>
+        </div>
+
+        <div class="content-caja-3">
+            <h3>Caja Nueve</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eum, laboriosam vero tempora repellen</p>
+        </div>    
+        <div class="content-caja-3">
+            <h3>Caja Diez</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo rerum aspernatur modi qui voluptatibus.</p>
+        </div>
+        <div class="content-caja-3">
+            <h3>Caja Once</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo rerum aspernatur modi qui voluptatibus.</p>
+        </div>
+        <div class="content-caja-3">
+            <h3>Caja Doce</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quo rerum aspernatur modi qui voluptatibus.</p>
+        </div>
+    </div>
+
+
+ 
+ <!-- Los archivos deben de ir en este orden-->
+ <script src="js/jquery-3.3.1.slim.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>   
+</body>   
+</html>
