@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAEA,OAAO;EACH,UAAU,ECHP,OAAO;;ADMd,EAAE;EACE,UAAU,ECPP,OAAO;;ADUd,EAAE;EACE,UAAU,EAAE,OAAO;;AAGvB,CAAC;EACG,KAAK,EAAE,OAAO",
-"sources": ["../sass/style.scss","../sass/_variables.scss"],
-"names": [],
-"file": "style.css"
-}
+{"version":3,"sourceRoot":"","sources":["../sass/style.scss","../sass/_variables.scss"],"names":[],"mappings":"AAEA;EACI,YCHG;;;ADMP;EACI,YCPG;;;ADUP;EACI;;;AAGJ;EACI","file":"style.css"}

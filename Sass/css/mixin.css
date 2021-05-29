@@ -30,21 +30,24 @@
   width: 600px;
   height: 200px;
   margin-top: 5px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 .cuadrado-2 {
   background-color: #222;
   width: 200px;
   height: 200px;
   margin-top: 5px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 .cuadrado-3 {
   background-color: #444;
   width: 200px;
   height: 200px;
   margin-top: 5px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 /* Podemos darnos cuenta de que los estilos
 se repiten para los mismos bloques. Entonces
@@ -54,13 +57,9 @@ propiedades a diferentes elementos*/
 Hasta ahí le dimos las mismas propiedades a los 3 bloques, pero que pasa si
 queremos que los otros sean diferentes?
 Para eso están los parametros que van dentro del parentesis.
-Definimos los parametros y lo almacenados, ds en los bloques le damos el valor 
+Definimos los parametros y lo almacenados, en los bloques le damos el valor que queremos.
 
-que queremos.
-
-Importante: Cuando agregas un parametro, tienes que si o si tienes que 
-
-especificar el valor de todos o te dará un error.
+Importante: Cuando agregas un parametro, tienes que si o si tienes que especificar el valor de todos o te dará un error.
 
 @mixin cuadrado ($fondo) {
     background-color:$fondo;
