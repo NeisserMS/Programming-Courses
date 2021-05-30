@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML Course </title>
+</head>
+<body>
+
+    <header> <!-- Solo una vez-->
+        <h1>CURSO DE HTML5 Y CSS3</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#"> Home <a></li>
+            <li><a href="#"> Quienes somos<a></li>
+            <li><a href="#"> Contactanos <a></li>
+        </ul>
+    </nav>
+    <section>
+        <header>
+            <h2>Seccion para un articulo</h2>
+        </header>
+    </section>
+    <main> <!-- Define el contenido principal del documento, solo hay un solo elemento main-->
+        <section> <!-- Esta etiqueta es parte del contenido que tendra informacion agrupada y el article tiene un contenido concreto-->
+            <header>
+                <h2>Seccion Deportes</h2>
+                <h3>Alianza Lima volvio a la baja</h3>
+            </header>
+            <!-- Puede ir article dentro de Section o al reves -->
+            <article> <!-- aqui va informacion relevante y pueden ir tantas etiquetas como queramos-->
+                <h3>Futbol</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quis!</p>
+
+                <figure> <!-- El elemento Figure sirve para agrupar contenido y mostrarlo organizadamente y resaltarlo sin necesidad de css y los motores de busqueda-->
+                    <img src="img/yumy.jpg" alt="La persona mas especial en mi vida">
+                    <figcaption>
+                        La persona mas especial en mi vida
+                </figure>
+                    </figcaption>
+                </figure>
+            </article>
+            <article>
+                <h3>Voley</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quis!</p>
+            </article>
+        </section>
+
+    </main>
+
+        <section>
+            <article>Funcion para convertir grados celcius a Faran</article>
+            <figure>
+                <pre>
+                    <code>
+                        funtion GradosCelcius(Farenheit){
+                            return (5/9) * (Farenheit)
+                        }
+                    </code>
+                </pre>git 
+            </figure>
+            <figcaption>Es la formula</figcaption>
+        </section>
+
+    <aside> 
+        <p>Aqui va informacion no relevante al contenido, como widgets de redes sociales o la publciidad.</p>
+    </aside>
+
+    <Footer> <!-- Provee informacion importante para terminar el documento y puede ir dentro de la etiqueta section o article o al final del documento
+    principal-->
+        <p>Fin de la pagina</p>
+    </Footer>
+
+   
+</body>
+</html>
