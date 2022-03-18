@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1> listado de Personas</h1>
+      <button class="btn btn-primary" [disabled]="desabilitar" (click)='agregarUsuario()'> Agregar Usuario </button>
+      <span *ngIf="mostrar; else sinPersona">{{mensaje}}
+        con el titulo de {{titulo}}
+      </span> <!-- ngIF: si es Verdadero se muestra-->
+      <ng-template #sinPersona> <!-- Usar el ngIf con el else-->
+        <p>No se ha agregado a ningún usuario</p>
+      </ng-template>
+
+      <input type="text" class="form-control" [(ngModel)]="titulo">
+      {{titulo}}
+    </div>
+  </div>
+</div>
+
+
+
+
