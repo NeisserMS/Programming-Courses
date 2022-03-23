@@ -1,0 +1,29 @@
+<form (ngSubmit)="f.form.valid && agregarValor()" #f="ngForm">
+  <div class="agregar">
+    <div class="agregar_contenedor">
+      <select (change)="tipoOperacion($event)" [ngClass]="{redfocus: tipo ==='egresoOperacion'}" class="agregar_tipo">
+        <option value="ingresoOperacion" selected>+</option>
+        <option value="egresoOperacion">-</option>
+      </select>
+      <input [ngClass]="{redfocus: tipo ==='egresoOperacion'}" type="text" class="agregar_descripcion" placeholder="Agregar Descripción"
+       name="descripcionInput" [(ngModel)]="descripcionInput" required>
+      <input [ngClass]="{redfocus: tipo ==='egresoOperacion'}" type="number" class="agregar_valor" placeholder="Valor"
+       name="valorInput" [(ngModel)]="valorInput" required>
+      <button type="submit" class="agregar_btn"><i [ngClass]="{red: tipo ==='egresoOperacion'}"
+          class="ion-ios-checkmark-outline"></i></button>
+    </div>
+  </div>
+</form>
+
+<!--
+  Utilizaremos el evento change
+  el submit es para que reconozca el enter cuando capturamos en nuestro formulario
+  Por medio de target accedemos al componnete de tipo select.
+
+  Con el ngClass vamos a lograr que cuando seleccionemos un egreso " - " se pinte de color rojo y un egreso (+)
+  de color verde
+
+  LO trabajamos con un (ngSubmit) y no con (click) porque se podia agregar ingresos o egresos sin la necesidad
+  de ingresar valores. Ademas con agregamos una referencia local #f para validar el formulario, es decir,
+  si ambos campos estan llenos, entonces que se agregue, de lo contratio no.
+-->

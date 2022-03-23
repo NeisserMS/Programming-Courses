@@ -1,0 +1,25 @@
+
+<!-- De esta manera pasamos la informacion del app.component al componente hijo cabecera
+     Utilizamos property binding (podemos llamar metodos como en este caso).
+    -->
+<app-cabecero
+[presupuestoTotal]="getPresupuestoTotal()"
+[ingresoTotal]="getIngresoTotal()"
+[egresoTotal]="getEgresoTotal()"
+[porcentajeTotal]="getPorcentajeTotal()"
+></app-cabecero>
+
+<app-formulario></app-formulario>
+<div class="contenedor limpiarEstilos">
+<app-ingreso></app-ingreso>
+<app-egreso
+[ingresoTotal]="getIngresoTotal()"
+></app-egreso>
+</div>
+
+
+<!-- El atroibuto ingresoTotal esta definido en el componente de egreso.component
+     y getIngresoTotal está en app.component.ts
+     Y estamos pasando la informacion de GetIngreos total a [ingresoTotal]
+  -->
+

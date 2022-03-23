@@ -1,0 +1,3 @@
+- Primero he separado en componentes el encabezado, el formulario, el egreso y ingreso, y tambien he creado los modelos de egreso y ingreso y un servicio.
+- 
+- Los pipes: nos ayudan a dar formato, por ejemplo el de monedas, estaclecer porcentajes, comas o puntos.
