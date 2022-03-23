@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Promesas </title>
+</head>
+
+<body>
+    <script>
+
+        let miPromesa = new Promise((resolver, rechazar) => {
+            let expresion = false;
+            if (expresion) {
+                resolver('Resolvió el mensaje');
+            } else {
+                rechazar('Se produjo un error');
+            }
+        });
+
+        /* ejemplo sin el catch
+        miPromesa.then(valor =>
+            console.log(valor),
+            error => console.log(error)); */
+
+        miPromesa
+        .then(valor => console.log(valor))
+        .catch(err=>console.log(err));
+
+    </script>
+</body>
+
+</html>
+
+<!-- Para las promesas tendremos dos caminos, cuando se resuelve será .then() porque
+se cumple la funcion y un catch() cuando se rechaza.
+
+Para esto hay que tener los conceptos de captura de errores y Callback
+
+
+-->

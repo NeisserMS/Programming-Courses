@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Función flecha - P2 </title>
+</head>
+
+<body>
+    <script>
+        
+        // const miFUncionFlecha = () =>{
+        //     console.log("Saludos de mi funcion");
+        // }
+
+        // Podemos retornar la información desde las funciones flechas  //
+        const saludar = () => {
+            return 'Saludos desde Flecha';
+        }
+
+        console.log(saludar());
+        
+        // Regresando un Objeto
+        const regresaObjeto = () => ({nombre: 'Neisser', apellido: 'Moreno'});
+        console.log(regresaObjeto());
+
+        // Regresando parametros
+        const funcionParametros = (mensaje) => console.log(mensaje);
+            funcionParametros('Saludos desde Parametros');
+
+        // Si solo tiene un parametro, podemos omitir los parentesis!
+        const funcionParametros2 = mensaje => console.log(mensaje);
+            funcionParametros2('Saludos desde Parametros 2');
+
+        // Ahora si son operaciones mas complicadas, podemso abrir llaves y operar dentro de ellas:
+        const funcionComplejo = (op1, op2, op3) => {
+            let resultado = op1 + op2 + op3;
+            return `Resultado: ${resultado}`;
+        };
+
+        console.log(funcionComplejo(1,2,3));
+        document.write(funcionComplejo(1,2,3));
+        
+        </script>
+       
+</body>
+
+</html>
+
+<!-- Entre parentesos porque los objetos tbn utilizan llaves, entonces para no generar
+errores utilizamos los parentesis ()
+
+
+-->

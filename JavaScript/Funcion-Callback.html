@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Promesas </title>
+</head>
+
+<body>
+    <!-- Es practicmaente pasar funciones como argumentos
+    Estamos pasando como parametro la funcion de imprimir a sumar!
+    FuncionCallback apunta a impirmir
+    -->
+    <script>
+
+        function imprimir(mensaje) {
+            console.log(mensaje);
+        }
+
+        function sumar(op1, op2, funcionCallback) {
+            let res = op1 + op2;
+            funcionCallback(`Resultado: ${res}`);
+        }
+
+        // Cuando llamamos la operacion sumar, ahi se entiende como funciona Callback
+        // Basta con solo escribir el nombre, no es necesario los parentesis, ya estamos pasando toda la función
+        sumar(5, 3, imprimir);
+
+
+        ///////////////////////////////////////
+
+        let imp = function imprimir(mensaje) {
+            console.log(mensaje);
+        }
+
+        function sumar(op1, op2, funcionCallback) {
+            let res = op1 + op2;
+            funcionCallback(`Resultado: ${res}`);
+        }
+        sumar(5, 3, imp);
+
+    </script>
+</body>
+
+</html>

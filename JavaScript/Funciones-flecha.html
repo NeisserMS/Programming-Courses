@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Función flecha </title>
+</head>
+
+<body>
+    <!-- los parametros en las funciones son opcionales -->
+    <script>
+        // Funcion normal: Aquí normalmente acepta que la funcion se pueda llamar sin antes definiarla
+        // miFuncion();
+        function miFuncion(){
+            console.log("Saludos desde mi función");
+        }
+        miFuncion(); 
+
+        ////////////////////////////////////////////////
+
+       // No utilizemos nombres de la funcion en las funciones flechas, deben de ser anonimas.
+       // Como vemos la funcion no tiene nombre, mas bien le asignamos una variable y de igual manera funciona.
+        let miFuncion2 = function(){
+            console.log('Saludos desde mi función 2');
+        }
+        miFuncion2()
+        
+        /////////////////////////////////////////////
+
+        // let miFuncion3 = () => {
+        //     console.log("Saludos desde mi función 3");
+        // }
+
+        const miFuncion3 = () => console.log("Saludos desde mi función 3")
+
+        miFuncion3();
+
+        // En la funcion flecha ya no es necesario utilizar la palabra reservada " function "
+        // Antes de abrir el cuerpo de la función, osea las llaves, utilizamos la flecha.
+        // Un detalle importante es que las funciones flechas si o si deben de ser definidas antes de mandarlas a llamar.
+        // podemos utilizar const en lugar de let para que ya no se modifique
+        // Un detalle mas es que si tu funcion flecha solo tiene una linea en su cuerpo, no es necesario ponerle las llaves
+
+    </script>
+</body>
+
+</html>
+
