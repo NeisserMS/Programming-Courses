@@ -1,0 +1,23 @@
+<!--
+    ngIf nos permite que de manera condicional podamos agregar contenido a la plantilla
+    basada en una condición.
+
+    Creamos la variable mostrar y si tiene el valor de verdadero mostrará el mensaje, si
+    es falso no lo hará.
+
+    Agregamos otra condición llamada SinPersona en caso de que la condición sea falso.
+    Osea si es que es falso se va a visualizar lo que está en el ng-template
+-->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1> Listado de Personas </h1>
+      <button class="btn btn-primary" (click)="agregarPersona()"> Agregar Persona </button>
+      <label *ngIf="mostrar; else sinPersona"> {{ mensaje }}</label>
+      <ng-template #sinPersona>
+        <p>No se ha agregado ninguna persona</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

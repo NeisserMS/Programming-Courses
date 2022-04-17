@@ -1,0 +1,30 @@
+<!-- Este evento nos permite escuchar los eventos de nuestros componnetes HTML, ejem:
+     cuando damos click, cuando presionamos una tecla, etc. 
+    
+    El ejercicio trata de que cuando se dará click al texto esté cambiará.
+    NOTA: Aqui vamos a capturar el evento y la informacion que proporciona
+    cierto componente de HTML, por ejem: un elemento de tipo InputText y asi capturar la informacion
+    que se va escribiendo en la caja de texto.
+
+    Pasamos la información a través de la variable event, esta tbn lo utilizamos para capturar.
+
+-->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label> Titulo Persona </label>
+            <input type="text" class="form-control"
+            (input)='modificarTitulo($event)'>
+            <h1> {{ titulo }} </h1>
+        </div>
+    </div>
+</div>
+
+<!-- 
+
+    La diferencia con el ejercicio anterior de template referencia es que cada vez
+    que cambios el valor al escribir se manda a llamar nuestro valor modificarTitulo.
+
+
+-->

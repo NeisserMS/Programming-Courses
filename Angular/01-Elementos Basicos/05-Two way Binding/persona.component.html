@@ -1,0 +1,25 @@
+<!-- 
+
+Es una forma de intercomunicar nuestros componentes, así que con esto podrmeos enviar información desde el componente
+a la plantilla HTML o viceversa.
+
+Es decir que si haemos un cambio en el componente este se verá reflejado en el html y si hacemso el cmabio en el html este se verá 
+reflejado tbn en el componente.
+
+Para hacer uso de esto necesitamos usar el modulo "FormsModule"
+
+-->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label> Titulo Persona </label>
+            <input type="text" class="form-control"
+            [(ngModel)]="titulo"
+            <h1> {{ titulo }} </h1>
+        </div>
+    </div>
+</div>
+
+

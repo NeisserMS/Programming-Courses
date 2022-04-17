@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="text-center pt-5"> {{ title}} </h1>
+  <label class="form-label">Operando A: </label>
+  <input type="number" class="form-control" placeholder="Ingrese el primer valor" [(ngModel)]="numero1" name="numero1">
+  <label class="form-label">Operando B: </label>
+  <input type="number" class="form-control" placeholder="Ingrese el segundo valor" [(ngModel)]="numero2" name="numero2">
+  <button class="btn btn-primary mt-3" (click)="sumar()"> SUMAR</button> <br>
+  <label class="mt-2"> Resultado: {{ resultado }}</label>
+</div>

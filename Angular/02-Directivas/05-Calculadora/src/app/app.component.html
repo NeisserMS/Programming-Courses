@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>{{titulo}}</h1>
+
+  <app-formulario (resultadoSuma)="EnviarSuma($event)"></app-formulario>
+  <app-resultado [resultadoHijo]="resultadoPadre" ></app-resultado>
+
+</div>

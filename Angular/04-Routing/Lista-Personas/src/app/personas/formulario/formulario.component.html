@@ -1,0 +1,45 @@
+<div class="box">
+  <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && guardarPersona()">
+      <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="nombreInput"
+        required
+      />
+      <input
+        type="text"
+        name="apellido"
+        id="apellido"
+        placeholder="Apellido"
+        [(ngModel)]="apellidoInput"
+        required
+      />
+      <button
+        type="submit"
+        style="cursor: pointer"
+      >+</button>
+      <button
+        *ngIf="index != null"
+        type="submit"
+        style="cursor: pointer"
+        class="buttonRed"
+        (click)="eliminarPersona()"
+      >-</button>
+  </form>
+</div>
+
+<!--
+
+El formulario no se va a enviar si no es valido y para ello vamos a agregar que los elementos sean requeridos
+
+#f = local reference
+ngForm = es la forma de angular, es el objeto para manekjar la forma
+
+(ngSubmit) = es cuando se envia el formulario
+
+Entonces por medio de la referencia local accedemos a la forma y preguntamos si es valida, y
+ademas de ser valida llamamos al metodo onGuardarPersona, el cual sera utilizado para guardar y para modificar.
+
+-->

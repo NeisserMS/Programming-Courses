@@ -1,0 +1,14 @@
+<!-- Aquí vamos a signar un nombre a cun componente en HTML y 
+     posteriormente utilizar el valor que almacena dicho componente, y también
+     utilizar interpolación.  -->
+
+<!-- Basicamente funciona como un repetidor ya que por medio de interpolacion estamos
+     capturando el valor que estamos ingresando por le input.  -->
+
+<div (keyup)='0'>
+    <input #entrada />
+    {{entrada.value}}
+</div>
+
+<!-- el metodo KEYUP es un evento en la cual cuando capturamos una tecla esta se lanza y podemos indicarle
+     cuanto tiempo esperar, pero en este caso le pone 0 porque queremos que sea de manera inmediata.  -->

@@ -1,0 +1,17 @@
+<!-- Es una propiedad que nos permite asignar valores a las propiedades de nuestros 
+     elementos HTML.
+     El ejercicio trata de habilitar y desabilitar el boton dinamicamente.
+-->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1> Listado de Personas </h1>
+            <button class="btn btn-primary" [disabled]='deshabilitar'> Agregar Persona </button>
+        </div>
+    </div>
+</div>
+
+<!-- Cuando esta sin entre corchetes Angular reconoce que se le va asociar con un atributo de la clase.
+     Entonces si el valor de deshabilitar esta ne false, no podeos usar el boton.
+-->

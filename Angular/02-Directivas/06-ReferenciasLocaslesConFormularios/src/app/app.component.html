@@ -1,0 +1,25 @@
+
+<!--
+  Referencias Locasles cuando trabajamos con formularios en Angular.
+  Ya no usaremos two way binding, por eso borramos los atributo de nombreInput y apellidoInput y tbn los ngModel.
+  la diferencia de two way binding con referencias locales es que con Two way Binding podemos modificar la informacion
+  desde el lado del componente y que se refleje en la plantilla y viceversar. Mientras que con referencias locales solo podemos enviar inforacion
+  de la plantilla al componente.
+
+-->
+
+<div class="container">
+  <div class="col">
+    <h3>{{title}}</h3>
+  </div>
+  <hr>
+
+  <app-formulario
+  (personaCreada)="personaAgregada($event)"></app-formulario>
+
+</div>
+
+<app-personas *ngFor="let personasElemento of personas; let i = index"
+[personas] = "personasElemento"
+[in] = "i"></app-personas>
+

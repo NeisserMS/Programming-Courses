@@ -1,0 +1,45 @@
+
+<!--
+  Property Binding entre componentes en Angular.
+  Crearemos un segundo componente y establecer la comunicación entre el componente padre y
+  el componente hijo. La directiva Input nos permite recibir información desde el componente el componente padre
+  hacia el componente hijo.
+-->
+
+<div class="container">
+  <div class="col">
+    <h3>{{title}}</h3>
+  </div>
+  <hr>
+
+  <form class="form-row">
+    <div class="form-group col-md-2">
+      <label for="nombre" class="sr-only">Nombre</label>
+      <input type="text" name="nombre" id="nombre" placeholder="nombre" class="form-control" [(ngModel)]="nombreInput">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="nombre" class="sr-only">Apellido</label>
+      <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control"
+        [(ngModel)]="apellidoInput">
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-success mt-2" (click)="agregarPersona()">
+        AGREGAR USUARIO
+      </button>
+    </div>
+  </form>
+</div>
+
+<app-personas *ngFor="let personasElemento of personas; let i = index"
+[personas] = "personasElemento"
+[in] = "i"></app-personas>
+
+
+<!-- Este es el componente padre y se encarga de iterar la lista.
+     Entonces utilizaremos el PB para pasar la informacion al componente hijo y ese pueda desplegar la información, por ello,
+     pasamos las "personas" y el "i".
+
+     Entonces, pasamos la información del objetos personas hacia el componente hijo, de igual manera el indice.
+     Hay que recordar que personasElemento tiene la lista del arreglo y in tiene el indice del arreglo.
+-->
