@@ -88,6 +88,21 @@ stages:
 		steps:
 		- script: Deploy
 
+###############################3
+# STEPS
+stages: #ETAPA
+- stage: Build
+	jobs: #TRABAJOS
+	- job: dev
+		steps: #ESTOS SON LOS PASOS DENTRO DEL TRABAJO (Se ejecuta en orden).
+		- script: Hola mundo
+		- bash: |
+			echo "This multiline script."
+		- pwsh: | #powershell
+			Write-Host "This multiline script."
+
+
+
 
 
 # - El nombre puede ir vacio y lo que va dentro del $ es una palabra reservada que hace referencia
