@@ -6,64 +6,90 @@ name: 1.0.$(Rev:r)
 #  - developer
 
 trigger:
-  branches:
-    include:
-      - master
+    branches:
+        include:
+            - master
 
-      - feature/* # Esto es un comodin, que se ejecuten todas las ramas que están dentro de esta carpeta.
+            - feature/* # Esto es un comodin, que se ejecuten todas las ramas que están dentro de esta carpeta.
 
-    exclude:
-      - developer #queremos que esta rama no se incluya ( a lo mejor tiene otra pipeline diferente).
+        exclude:
+            - developer #queremos que esta rama no se incluya ( a lo mejor tiene otra pipeline diferente).
 
 # #########################
 variables:
-  frase: hello
-  name: devOps
+    frase: hello
+    name: devOps
 # #########################
 pool:
-  vmImage: ubuntu-latest #Hosted agent
+    vmImage: ubuntu-latest #Hosted agent
 # #########################
 
 jobs:
-  - job: MyJob #nombre del job
-    displayName: mi primer job #el nombre que saldrá en el pipeline
-    continueOnError: true # Si continua o no cuando ocurra un error, pero que nos notifique.
-    dependsOn: A
-    container: NombreContenedor #Si utilizará un contenedor de docker o cualquier otro aqui va el nombre
-    pool: nombreDePool #Si queremos que el job utilice un pool en concreto solo para está sección, lo declaramos aqui.
-    workspace:
-      clean: outputs # que limpie la salida o antes de ejecutar
-    steps: #Aquí especificamos los pasos que va a ejecutar un job
-      - script: echo My primer job
+    - job: MyJob #nombre del job
+      displayName: mi primer job #el nombre que saldrá en el pipeline
+      continueOnError: true # Si continua o no cuando ocurra un error, pero que nos notifique.
+      dependsOn: A
+      container: NombreContenedor #Si utilizará un contenedor de docker o cualquier otro aqui va el nombre
+      pool: nombreDePool #Si queremos que el job utilice un pool en concreto solo para está sección, lo declaramos aqui.
+      workspace:
+          clean: outputs # que limpie la salida o antes de ejecutar
+      steps: #Aquí especificamos los pasos que va a ejecutar un job
+          - script: echo My primer job
 
-  - job: A
-    steps:
-      - script: echo 'job A'
+    - job: A
+      steps:
+          - script: echo 'job A'
 
-  - job: B
-    dependsOn: A #Cuando se ejecute el job A que recién se ejecute el B
-    steps:
-      - script: echo 'job B'
+    - job: B
+      dependsOn: A #Cuando se ejecute el job A que recién se ejecute el B
+      steps:
+          - script: echo 'job B'
 
-  - job: c
-    dependsOn: B #Cuando se ejecute el job B que recién se ejecute el C
-    steps:
-      - script: echo 'job C'
+    - job: c
+      dependsOn: B #Cuando se ejecute el job B que recién se ejecute el C
+      steps:
+          - script: echo 'job C'
 
-  - job: D
-    dependsOn: #Depende de dos job, si hay un fallo en algunos estonces este no se ejecuta.
-      - B
-      - C
-    steps:
-      - script: echo 'job D'
+    - job: D
+      dependsOn: #Depende de dos job, si hay un fallo en algunos estonces este no se ejecuta.
+          - B
+          - C
+      steps:
+          - script: echo 'job D'
 
-  - job: trabajo1
-    steps:
-      - script: echo "$(frase), $(name)"
+    - job: trabajo1
+      steps:
+          - script: echo "$(frase), $(name)"
 
-  - job: trabajo2
-    steps:
-      - script: echo "$(frase), $(name)"
+    - job: trabajo2
+      steps:
+          - script: echo "$(frase), $(name)"
+
+	#################################
+	#Steps: son agrupadores de trabajos se ejcutan de forma secuencial y lo usamos si es que queremos que realice más de una cosa 
+	#al mismo tiempo. 
+
+stages:
+- stage: Build #este stage lo que hace es compilar
+	jobs:
+	- job: testOnWindows #contiene un job
+		steps:
+		- script: echo hola mundo 1 # esto mostrará por pantalla
+
+- stage: Test #cuando termine le primer stage comenzará esta.
+	jobs:
+	- job: testOnWindows
+		steps:
+		- script: compilando
+
+- stage: Test #cuando termine le primer stage comenzará esta.
+	jobs:
+	- job: Deploy
+		steps:
+		- script: Deploy
+
+
+
 # - El nombre puede ir vacio y lo que va dentro del $ es una palabra reservada que hace referencia
 # a una variable de entorno que está dentro de nuestro azure devOps.
 
