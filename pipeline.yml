@@ -65,9 +65,9 @@ jobs:
       steps:
           - script: echo "$(frase), $(name)"
 
-	#################################
-	#Steps: son agrupadores de trabajos se ejcutan de forma secuencial y lo usamos si es que queremos que realice más de una cosa 
-	#al mismo tiempo. 
+#################################
+#Steps: son agrupadores de trabajos se ejcutan de forma secuencial y lo usamos si es que queremos que realice más de una cosa 
+#al mismo tiempo. 
 
 stages:
 - stage: Build #este stage lo que hace es compilar
@@ -102,6 +102,26 @@ stages: #ETAPA
 			Write-Host "This multiline script."
 
 
+###### CONDICIONES
+
+jobs:
+- job: A
+  steps:
+  - script: exit 1
+
+- job: B
+  dependsOn: A
+  condition: failed()
+  steps:
+  - script: echo esto se ejecutará cuando A falle
+
+- job: C
+  dependsOn:
+  - A
+  - B
+  condition: succeeded('B')
+  steps:
+  - script: echo esto se ejecutará cuando B se ejecute y tenga éxito
 
 
 
