@@ -138,3 +138,282 @@ jobs:
 # Cada job son tareas unitarias que realizan tareas concretas.
 # Si no marcamos dependencias para los jobs se ejecutaran al mismo tiempo!
 
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  repositories:
+  - repository: Report_Angular 
+    type: git  
+    name: front-angular 
+    trigger:  
+      branches:
+        include:
+        - dev
+        - qas
+        - main
+  
+  - repository: RepositorioDeveloper
+    type: git
+    name: Practicando001/RepoDeveloper
+    endpoint: azureSubscription
+    ref: refs/heads/dev
+    
+ 
+variables:
+  - template: template/variables.yml
+  - group: Build
+  - group: SonarCloud
+  - group: Deploy
+  
+
+stages:
+  - stage: BUILD
+    jobs: 
+      - job: Build
+        steps:
+          - template: templates/pipelinePrueba.yml@RepositorioDeveloper
+
+          - checkout: git://PY-DEVOPS-TRAINING/front-angular@refs/heads/dev
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '16.14.0'
+            displayName: 'Install Node.js'
+          - template: template/base.yml
+          - template: template/steps_test.yml
+          - template: template/task_copy.yml
+          - script: |
+              ng build --prod
+              ls
+              zip -rq test.zip dist
+              ls
+              echo "REFERENCIA:" $(ref)
+              echo "Rama Dev:" $(isDev)
+              echo "Rama Main:" $(isMain)
+            displayName: 'node_modules, dist y test.zip'
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publicacion de mi artefacto'
+            inputs:
+              PathtoPublish: test.zip
+              ArtifactName: 'Build-Angular'
+              publishLocation: 'Container'
+            condition: succeededOrFailed()
+          
+  - stage: SONARCLOUD
+    jobs: 
+      - job: SonarCloud
+        # dependsOn: Build
+        steps:
+          - script:
+              #echo $(sonarC)
+              echo Hola desde SonarCloud
+          
+          - task: DownloadBuildArtifacts@0
+            displayName: 'Descargando el artefacto'
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: 'Build-Angular'
+              #downloadPath: test.zip
+              downloadPath: .
+          
+          - script: |
+              ls
+              echo -------------------------
+              unzip Build-Angular/test.zip
+              ls
+
+
+  - stage: DEPLOYMENT
+    jobs: 
+      - job: Deployment
+        # dependsOn: SonarCloud
+        steps:
+          - script: echo Hola desde deploy 
+          #- script: echo $(deploy)
+
+
+  --------------------------
+trigger: none
+  # branches:
+  #   include:
+  #     - master
+  #     - feature/* # Escuchará a todas las ramas dentro de está carpeta.
+  #   exclude:
+  #     - feature/old* # No se escuchará la rama que empiecen con old*
+  # paths:
+  #   exclude:
+  #   - README.md # Que cuando haya cambios no escuche a este archivo
+
+variables:
+  # - name: globalVariable
+  #   value: "global Variable desde la raiz"
+  # - name: overrideGlobalVariable
+  #   value: "Root"
+  # - group: Test
+
+  #EXPRESIONES
+  staticVar: 'Mi valor' #Variable estatica
+  compileVar: ${{ variables.staticVar }} #expresión en tiempo de compilación
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')] #expresion de ejecucion
+  #LITERALES
+  varBoolean: ${{ true }}
+  varNumber: ${{ -1.2 }}
+  varString: ${{ 'a b c'}}
+  varVersion: ${{ 1.2.3}}
+  #CUERDA
+  # myKey: |
+  #   Neisser
+  #   Moreno
+  #   Sanchez
+
+pool:
+  # vmImage: ubuntu-latest
+  vmImage: windows-latest
+
+stages:
+- stage:
+  displayName: "Stage 1"
+  variables:
+    stageVariable: "Mi variable en Stage"
+    # overrideGlobalVariable: "Stage - Chancando la variable de global raiz"
+    globalVariable: "Stage - Chancando la variable de global raiz"
+
+  jobs:
+    - job: Developer
+      variables:
+        - name: jobVariable
+          value: "Variable de mi Job"
+
+      steps:
+      - script: echo $(ValorOne)
+        displayName: 'Testeando'
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: |
+            echo "globalVariable" $(globalVariable)
+
+            echo "Ruta local del agente:" $(Agent.BuildDirectory)
+            echo "Directorio donde se instala:" $(Agente.HomeDirectory)
+            echo "DNI del agente" $(Agente.Id)
+            echo "Nombre de la maquina donde se instala el agente:" $(Agent.MachineName)
+
+            echo "Nombre de mi repositorio: " $(Build.Repository.Name)
+            echo "El ID del registro de la compilación completa: "$(Build.BuildId)
+            echo "Número de ejecución: " $(Build.BuildNumber)
+            echo "Identificador del repositorio:" $(Build.Repository.ID)
+            echo "Tipo de repositorio: " $(Build.Repository.Provider)
+            echo "Rama del repositorio: " $(Build.SourceBranch)
+
+            echo "Espacio de trabajo del pipeline:" $(Pipeline.Workspace)
+
+            echo "Nombre de mi org. en azureDevOps: " $(System.CollectionUri)
+            echo "Ruta local del agente dond se descarga los archivos" $(System.DefaultWorkingDirectory)
+            echo "ID del pipeline de compilación: " $(System.DefinitionId)
+            
+            - script: |
+            echo ${{variables.staticVar}}
+            echo $(compileVar)
+            echo $(isMain)
+            echo LITERALES
+            echo $(varBoolean)
+            echo $(varNumber)
+            echo $(varString)
+            echo $(varVersion)
+            
+  
+              -----------------------------------------
+trigger: none
+  # branches:
+  #   include:
+  #     - master
+  #     - feature/* # Escuchará a todas las ramas dentro de está carpeta.
+  #   exclude:
+  #     - feature/old* # No se escuchará la rama que empiecen con old*
+  # paths:
+  #   exclude:
+  #   - README.md # Que cuando haya cambios no escuche a este archivo
+
+variables:
+  # - name: globalVariable
+  #   value: "global Variable desde la raiz"
+  # - name: overrideGlobalVariable
+  #   value: "Root"
+  # - group: Test
+
+  #EXPRESIONES
+  staticVar: 'Mi valor' #Variable estatica
+  compileVar: ${{ variables.staticVar }} #expresión en tiempo de compilación
+  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/master')] #expresion de ejecucion
+  #LITERALES
+  varBoolean: ${{ true }}
+  varNumber: ${{ -1.2 }}
+  varString: ${{ 'a b c'}}
+  varVersion: ${{ 1.2.3}}
+  #CUERDA
+  # myKey: |
+  #   Neisser
+  #   Moreno
+  #   Sanchez
+
+pool:
+  # vmImage: ubuntu-latest
+  vmImage: windows-latest
+
+stages:
+- stage:
+  displayName: "Stage 1"
+  variables:
+    stageVariable: "Mi variable en Stage"
+    # overrideGlobalVariable: "Stage - Chancando la variable de global raiz"
+    globalVariable: "Stage - Chancando la variable de global raiz"
+
+  jobs:
+    - job: Developer
+      variables:
+        - name: jobVariable
+          value: "Variable de mi Job"
+
+      steps:
+      - script: echo $(ValorOne)
+        displayName: 'Testeando'
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: |
+            echo "globalVariable" $(globalVariable)
+
+            echo "Ruta local del agente:" $(Agent.BuildDirectory)
+            echo "Directorio donde se instala:" $(Agente.HomeDirectory)
+            echo "DNI del agente" $(Agente.Id)
+            echo "Nombre de la maquina donde se instala el agente:" $(Agent.MachineName)
+
+            echo "Nombre de mi repositorio: " $(Build.Repository.Name)
+            echo "El ID del registro de la compilación completa: "$(Build.BuildId)
+            echo "Número de ejecución: " $(Build.BuildNumber)
+            echo "Identificador del repositorio:" $(Build.Repository.ID)
+            echo "Tipo de repositorio: " $(Build.Repository.Provider)
+            echo "Rama del repositorio: " $(Build.SourceBranch)
+
+            echo "Espacio de trabajo del pipeline:" $(Pipeline.Workspace)
+
+            echo "Nombre de mi org. en azureDevOps: " $(System.CollectionUri)
+            echo "Ruta local del agente dond se descarga los archivos" $(System.DefaultWorkingDirectory)
+            echo "ID del pipeline de compilación: " $(System.DefinitionId)
+            
+            - script: |
+            echo ${{variables.staticVar}}
+            echo $(compileVar)
+            echo $(isMain)
+            echo LITERALES
+            echo $(varBoolean)
+            echo $(varNumber)
+            echo $(varString)
+            echo $(varVersion)
+            
+  
+              -------------
+
