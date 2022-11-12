@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Método Map </title>
+</head>
+<body>
+    <script>
+        // Método tradicional: Solo mostrar el plato principal o el postre.
+        // var almuerzos = [ 
+        //     {principal: 'arepa', postre: 'mazamorra'},
+        //     {principal: 'arroz chaufa', postre: 'pudin'},
+        //     {principal: "pizza", postre: 'galletas'},
+        //     {principal: 'sushi', postre: 'gelatina'}
+        // ];
+
+        // var platos_Principales = [];
+
+        // for(var i=0; i < almuerzos.length; i++){
+        //     platos_Principales.push(almuerzos[i].postre);
+        // }
+
+        // console.log(platos_Principales);
+
+        //-----------------------------------------------------------------------
+        
+        // Método MAP
+        // El metodo map crea un nuevo array en la memoria; esté ingresa a cada registro.
+        // var almuerzos = [ 
+        //     {principal: 'arepa', postre: 'mazamorra'},
+        //     {principal: 'arroz chaufa', postre: 'pudin'},
+        //     {principal: "pizza", postre: 'galletas'},
+        //     {principal: 'sushi', postre: 'gelatina'}
+        // ];
+
+        // var platosPrincipales = almuerzos.map(function(comida){
+        //     return comida.principal;
+        // });
+
+        // console.log(platosPrincipales);
+        
+        //----------------------------------------------------------------------------------
+
+        var almuerzos = [  
+            {principal: 'arepa', postre: 'mazamorra', precio: 22},
+            {principal: 'arroz chaufa', postre: 'pudin', precio: 12},
+            {principal: "pizza", postre: 'galletas', precio: 15},
+            {principal: 'sushi', postre: 'gelatina', precio: 30}
+        ];
+            
+        // Productos que su precio sea menos de 15 soles
+        // var platosPrincipales = almuerzos.map(function(comidas){
+        //     if(comidas.precio <= 15){
+        //         return comidas.postre;
+        //     }
+        // });
+
+        // console.log(platosPrincipales);
+        
+        //Productos aplicandole un descuento
+        // var platosPrincipales = almuerzos.map(function(comidas){
+        //     if(comidas.precio <=15){
+        //         // comidas.precio = comidas.precio * 0.9; ES UN ERROR, no debe hacerse así.
+        //         return{ //retornamos un nuevo objeto donde se copia los valores del valor original, el arreglo original no se debe de tocar. EL metodo map, filter y reduces son funciones limpias.
+        //             ...comidas,
+        //             precio: comidas.precio * 0.9
+        //         }
+        //     }
+        // });
+        // console.log(platosPrincipales);
+
+        //-------------------------------------------------------------------------
+        //Obtener solo el nombre de los postres.
+        // const NombrePostre = almuerzos.map(function(comida){
+        //     return comida.postre;
+        // });
+        // console.log(NombrePostre);
+
+        // Reduciendo la función
+        // const NombrePostre = almuerzos.map(comida => comida.postre); // reemplazamos por una flecha.
+        // console.log(NombrePostre);
+
+        //Reduciendo un poco má, es necesario desarmar el parametro recibido y solo obteniendo el postre y retornandolo.
+        const NombrePostre = almuerzos.map(({postre}) => postre); // reemplazamos por una flecha.
+        console.log(NombrePostre);
+        //Entonces a partir del array de almuerzos obtenemos un nuevo array con solo los nombres de los postres.
+
+    </script>
+</body>
+</html>
+

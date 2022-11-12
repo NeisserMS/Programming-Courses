@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Metodo reduce </title>
+</head>
+
+<body>
+    <script>
+
+        // El metodo trata de reducir el array original a un único numero, puede ser una suma.
+
+        // Método Tradicional
+
+        // const numero = [1, 2, 3, 4, 5];
+        // let total = 0;
+        // for (let numeros of numero) {
+        //     total = numeros + numeros;
+        // }
+        // console.log(total);
+
+        //-----------------------------------------------------
+        // EL primer parametro es la función reductora y el segundo es el valor inicilar del aumulador.
+        // let total = numero.reduce((acumulador, numero) => {
+        //     return acumulador + numero; //Retornamos el valor dle acumulador actualizado (suma del valor que nos llegó y el numero actual). 
+        // }, 0);
+        // console.log(total);
+
+        //------------------------------------------------------------
+        // Más entendible
+        // const acumular = (acumulador, numero) => acumulador + numero; //la funcion de acumular lo hacemos en una variable aparte (retorna el nuevo valor acumulado).
+        // let total = numero.reduce(acumular, 0);
+
+        // Si no podemos el valor inicial no toma el numero primero del array, comienza a contar desde el 1, pero y si el array esta vacio nos daria un error, por ello
+        // lo siguiente es para asegurarse de que el array no esté vacio.
+
+        const numeros = []
+        const acumular = (acumulador, numero) => acumulador + numero;
+        let total = numeros.length > 0 ? numeros.reduce(acumular) : 0; //asgurar de que la sentencia se ejecute solo si el array tiene elementos, si no hay que sea 0.
+
+        console.log(total);
+    </script>
+</body>
+
+</html>
+
+https://www.youtube.com/watch?v=tP8JiVUiyDo

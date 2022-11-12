@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Método Filter </title>
+</head>
+<body>
+    <script>
+        // Filter toma cada elemento del array y va decidienco si caa uno de ellos pasa la nuevo array, pero solo si cumple la condicion.
+        // El resultado es un nuevo array que contiene solo los elementos del array original pero que cumple cierta condición.
+
+        const almuerzos = [  
+            {principal: 'arepa', postre: 'mazamorra', precio: 22},
+            {principal: 'arroz chaufa', postre: 'pudin', precio: 12},
+            {principal: "pizza", postre: 'galletas', precio: 15},
+            {principal: 'sushi', postre: 'gelatina', precio: 30}
+        ];
+            
+    //    const AlmuerzosBaratos = almuerzos.filter(combo => combo.precio <20);
+    //    console.log(AlmuerzosBaratos);
+
+       //Mejorandolo
+       // 
+       const esBarato = combo => combo.precio <= 20;
+       const esCaro = combo => !esBarato(combo);
+
+
+       const AlmuerzosBaratos = combo.filter(esBarato);
+       const AlmuerzosCaros = combo.filter(esCaro);
+
+       console.log(AlmuerzosBaratos);
+       console.log(AlmuerzosCaros);
+       // Tenemos uan función que nos dice si el producto es barato, precio menor de 20 y escojemos ese predicado(esBarato) y filtramos desde ahí.
+
+       //NADA DE FOR O IF, SOLO CON VARIABLES Y FUNCIONES CON NOMBRES DESCRIPTIVOS.
+       //Ejemplo: entrar a los productos caros.
+      
+       
+        
+    </script>
+</body>
+</html>
