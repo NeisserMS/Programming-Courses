@@ -1,0 +1,14 @@
+/* ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} */
+
+.selected {
+    background-color: red;
+    padding: 10px;
+}
+
+.OnSelected {
+    color: blue;
+}

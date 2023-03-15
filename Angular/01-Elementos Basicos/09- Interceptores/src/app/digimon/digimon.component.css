@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,300&display=swap');
+
+* {
+  font-family: 'poppins', sans-serif;
+}
+.busqueda{
+   margin: 10px 100px 20px 100px; 
+  display: flex;
+  align-items: center;
+}
+
+.busqueda button{
+	font-size: 12px;
+	right: 10px;
+	
+  }
+
+table {
+    /* width: 100%; */
+    text-align: center 
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 15px;
+ 
+}
+
+footer {
+  text-align: center;
+  color:blueviolet;
+  font-size: 16px;
+}

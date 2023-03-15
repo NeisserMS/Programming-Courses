@@ -1,0 +1,20 @@
+<h1>Ejemplo con PIPES</h1>
+<hr>
+<h3> PIPE PARA CONVERTIR EN MAYUSCULAS </h3>
+<ul *ngFor="let member of lista ">
+    <li>{{ member.nombre | upperCases }}</li>
+</ul>
+<hr>
+<h3> PIPE PARA ORDENAR </h3>
+<ul *ngFor="let member of lista | sort">
+    <li> ID: {{ member.id}}, Nombre: {{member.nombre}}, Apellido: {{member.apellido}} </li>
+</ul>
+<hr>
+<h3> PIPE PARA ORDENAR DE FORMA INVERSA </h3>
+<ul *ngFor="let member of lista | sortCondition:true">
+    <li> ID: {{ member.id}}, Nombre: {{member.nombre}}, Apellido: {{member.apellido}} </li>
+</ul>
+<h3> PIPE PARA TIEMPOS </h3>
+<ul *ngFor="let member of lista ">
+    <li> Nombre: {{member.nombre}}, Tiempo: {{member.tiempo | userTime }} </li>
+</ul>

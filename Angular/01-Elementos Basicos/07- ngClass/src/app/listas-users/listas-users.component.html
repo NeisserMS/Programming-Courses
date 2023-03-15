@@ -1,0 +1,64 @@
+<p class="container bg-dark text-white text-center my-4 py-4"> Ejemplos con ngClass</p>
+
+<!-- EJEMPLO SENCILLO (PINTAR LOS BACKGROUND DE LA CAJA DE TEXTO DE DIFERENTES COLORES )-->
+<div class="container">
+    <button class="btn btn-dark m-1" (click)="fondo='bg-dark'"> Primeroo </button>
+    <button class="btn btn-danger " (click)="fondo='bg-success'"> Segundo </button>
+
+    <p class="text-info" [ngClass]="fondo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nisi earum voluptate explicabo, rem recusandae ad
+        excepturi inventore cupiditate error quod accusamus sed facere quasi doloremque repudiandae. Rerum ut veniam
+        perspiciatis, eos repellat ipsa fugiat, neque amet, ex similique dolores doloremque quod omnis nisi hic autem
+        voluptatibus sapiente eveniet aut?
+    </p>
+
+    <p class="text-black" [ngClass]="fondo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ut veritatis quisquam dolorem nesciunt assumenda,
+        architecto sunt! Aut et a provident illo laboriosam ipsam dolore, illum similique dolorem. Fugiat quas, minima a
+        quae reiciendis magnam odio, obcaecati similique aspernatur quis ratione? Ipsa maiores porro repellendus quos
+        officiis laudantium est dolorum!
+    </p>
+</div>
+
+
+<!-- EJEMPLO CON CONDICIÓN UTILIZANDO SOLO LAS CLASES DE BOOTSTRAP -->
+<div class="container">
+    <hr>
+    <button class="btn btn-dark m-1 " (click)="activo='primero'"> Primero </button>
+    <button class="btn btn-danger" (click)="activo='segundo'"> Segundo </button>
+
+    <p class="text-muted" [ngClass]="activo=='primero' ? 'd-block' : 'd-none' ">
+        Hola Desde el boton Primero
+    </p>
+
+    <p class="text-muted" [ngClass]="activo=='segundo' ? 'd-block': 'd-none'">
+        Hola Desde el boton Segundo
+    </p>
+</div>
+
+<!-- EJEMPLO CON ESTILOS CSS PURO  -->
+<div class="container">
+    <hr>
+    <h4> Ejemplo 2</h4>
+    <ul *ngFor="let item of Paises">
+        <li [ngClass]="['selected',' OnSelected']"> {{ item.Nombre}}</li>
+    </ul>
+</div>
+
+<!-- ACTUA COMO UN BOLLEAN Y ASI LO PODEMOS CONTROLAR -->
+<div class="container">
+    <h4> Ejemplo 3 </h4>
+    <ul *ngFor="let item of Paises">
+        <li [ngClass]="{'selected': true, 'OnSelected': false}"> {{ item.Nombre}}</li>
+    </ul>
+</div>
+
+
+<!-- MÁS AVANZADO, QUE SOLO PINTE ALGUNOS DATOS -->
+<div class="container">
+    <h4> Ejemplo 4 </h4>
+    <ul *ngFor="let item of Paises">
+        <li [ngClass]="{'selected': item.Nombre === 'Perú', 'OnSelected': item.Nombre != 'Perú' }"> {{ item.Nombre}}
+        </li>
+    </ul>
+</div>

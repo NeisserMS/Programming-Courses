@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="titulo">
+		<img [src]="logito" alt="LOGO">
+	</div>
+	<div class="busqueda">
+		<input class="form-control" id="myInput" type="text" placeholder="Buscar.." name="filterPost"
+			[(ngModel)]="filterPost">
+		<button type="button" class="btn btn-danger ms-3" (click)="abrirpdf()"> Exportar PDF</button>
+		<button type="button" class="btn btn-success m-3" (click)="abrirExcel()"> Exportar Excel</button>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Nombre</th>
+				<th scope="col">Link Imagen</th>
+				<th scope="col">Estado</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let digimon of digimones | search: filterPost">
+				<td>{{digimon.name}}</td>
+				<td> {{digimon.img}}</td>
+				<td>{{digimon.level}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<footer> Copyright © | Neisser Moreno Sanchez</footer>
+</div>
