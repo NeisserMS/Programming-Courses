@@ -11,9 +11,36 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot( // Este es el concepto de imports
+  imports: [RouterModule.forRoot( // Este es el concepto de imports, se usa para las rutas principales.
     routes
   )],
   exports:[RouterModule] // Tambien necesitamos exportarlo
 })
+
+// @NgModule({
+//     imports: [
+//         RouterModule.forChild([ // Se utiliza para especificar las rutas secundarias
+//             {
+//                 canActivate: [AuthGuard],
+//                 path: 'customer-data',
+//                 component: IndexCustomerDataComponent,
+//             },
+//             {
+//                 canActivate: [AuthGuard],
+//                 path: "statistics",
+//                 component: StatisticsCustomerComponent,
+//             },
+//             {
+//                 path: '',
+//                 redirectTo: 'customer-data',
+//                 pathMatch: 'full', // valor 'prefix' cuando buscan una coincidencia de la ruta y 'full' coincidencia exacta con la ruta. 
+//             },
+//             {
+//                 path: "**",
+//                 redirectTo: "customer-data",
+//             },
+//         ]),
+//     ],
+//     exports: [RouterModule],
+// })
 export class AppRoutingModule { }
