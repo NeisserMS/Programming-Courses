@@ -224,6 +224,23 @@ Ejecuta la aplicación utilizando Docker Compose con el siguiente comando en la 
 docker-compose up
 ```
 
+### Diferencia entre Docker Compose y Kubernetes
+Docker Compose y Kubernetes son herramientas relacionadas pero tienen propósitos y alcances diferentes. Mientras que ambos están diseñados para orquestar y gestionar contenedores en entornos de producción, tienen enfoques distintos y se utilizan en diferentes contextos.
+
+Docker Compose:
+
+Es una herramienta para definir y ejecutar aplicaciones multi-contenedor en entornos locales o de desarrollo. Docker Compose se centra en la facilidad de uso y es ideal para desarrolladores que desean definir sus servicios y configuraciones en un archivo YAML (docker-compose.yml) y luego ejecutar su aplicación con un solo comando (docker-compose up).
+
+Docker Compose es adecuado para entornos más pequeños y menos complejos, como proyectos de desarrollo y pruebas locales. Puede manejar fácilmente la definición y ejecución de servicios relacionados en un único host.
+
+Kubernetes:
+
+Es una plataforma de orquestación de contenedores de código abierto que se utiliza para implementar, escalar y gestionar aplicaciones contenerizadas en entornos de producción a gran escala. Kubernetes proporciona un conjunto más completo de características y aborda desafíos más complejos, como el escalado automático, la gestión de la salud de los contenedores, la orquestación de servicios, la gestión de la red, la tolerancia a fallos y la distribución de la carga de trabajo.
+
+Kubernetes es más adecuado para aplicaciones empresariales que necesitan gestionar muchos contenedores, escalabilidad automática, alta disponibilidad y otras características avanzadas en entornos de producción.
+
+En resumen, Docker Compose es excelente para el desarrollo local y entornos de prueba, mientras que Kubernetes brinda una solución más robusta y escalable para la orquestación de contenedores en entornos de producción. En algunos casos, los desarrolladores pueden usar Docker Compose para el desarrollo y pruebas locales y luego migrar a Kubernetes para implementaciones en entornos de producción más grandes. También es común ver el uso conjunto de ambas herramientas, donde Docker Compose se utiliza en el desarrollo y Kubernetes en la implementación.
+
 #### Docker desde el navegador
 https://labs.play-with-docker.com/
 
